@@ -1,24 +1,20 @@
 BookexchangeSqlite::Application.routes.draw do
-  get "session/new"
-  post "session/new"
-  get "session/create"
-  get "session/destroy"
 
-  get "page/show"
-  get "users/login"
+#   get "page/show"
 
   resources :books
   resources :users
+  resources :pages
+
+  get "session/new" => "session#new"
+  get "page/show" => "page#show"
 
 
   controller :session do
     get 'login' => :new
-    post 'new' => :create
-    delete 'logut' => :destroy
+    post 'login' => :create
+    delete 'logout' => :destroy
   end
-
-
-  match 'register' => 'users#new'
 
   match ':page' => 'page#show'
   root :to => 'page#show'
