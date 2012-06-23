@@ -1,16 +1,30 @@
 BookexchangeSqlite::Application.routes.draw do
+  get "session/new"
+
+  get "session/create"
+
+  get "session/destroy"
+
   get "page/show"
   get "users/login"
 
   resources :books
-
   resources :users
+
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logut' => :destroy
+  end
 
 
   match 'register' => 'users#new'
 
   match ':page' => 'page#show'
   root :to => 'page#show'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

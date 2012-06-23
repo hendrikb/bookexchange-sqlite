@@ -20,9 +20,12 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password_digest %><br />
-    <%= f.text_field :password_digest %>
+    <%= f.label :password, 'Password' %><br />
+    <%= f.password_field :password, size: 40 %>
   </div>
+  <div class="field">
+    <%= f.label :password_confirmation, 'Password Confirmation' %><br />
+    <%= f.password_field :password_confirmation, size: 40 %>
   <div class="field">
     <%= f.label :age %><br />
     <%= f.number_field :age %>

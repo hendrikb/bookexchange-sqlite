@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    # @users = User.all
+    @users = User.order(:user_name)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
 
 		begin 
 			if @user.save
-				format.html { redirect_to @user, notice: 'User was successfully created.' }
+				format.html { redirect_to @user, notice: "User #{@user.user_name} was successfully created." }
 				format.json { render json: @user, status: :created, location: @user }
 			 else
 				format.html { render action: "new" }
@@ -66,7 +67,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: "User #{@user.user_name} was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
