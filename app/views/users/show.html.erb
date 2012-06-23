@@ -1,26 +1,32 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>User name:</b>
-  <%= @user.user_name %>
-</p>
-
-<p>
+<h1>User Details for <%= @user.user_name %></h1>
+<div>
   <b>Email:</b>
   <%= @user.email %>
-</p>
+</div>
 
-
-<p>
+<div>
   <b>Age:</b>
   <%= @user.age %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Description:</b>
   <%= @user.description %>
-</p>
+</div>
 
+<div>
+  <h1>Available Books</h1>
+  <ul id="books">
+    <% @user.books.each do |book| %>
+      <li><%= book.title %>
+        <% if book.author? %>
+          <%= "("+book.author+")" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', :back %>
