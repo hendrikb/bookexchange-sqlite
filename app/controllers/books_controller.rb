@@ -1,5 +1,8 @@
 class BooksController < ApplicationController
   skip_before_filter :authorize, only: [:index]
+
+  #TODO: add validation
+
   # GET /books
   # GET /books.json
   def index
@@ -44,6 +47,7 @@ class BooksController < ApplicationController
     @book = Book.new(params[:book])
 
     respond_to do |format|
+      book.user = session[:user]
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }
