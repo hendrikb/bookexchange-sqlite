@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  skip_before_filter :authorize, only: [:show, :index]
   # GET /books
   # GET /books.json
   def index

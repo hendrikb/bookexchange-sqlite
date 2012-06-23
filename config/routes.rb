@@ -1,8 +1,7 @@
 BookexchangeSqlite::Application.routes.draw do
   get "session/new"
-
+  post "session/new"
   get "session/create"
-
   get "session/destroy"
 
   get "page/show"
@@ -12,9 +11,9 @@ BookexchangeSqlite::Application.routes.draw do
   resources :users
 
 
-  controller :sessions do
+  controller :session do
     get 'login' => :new
-    post 'login' => :create
+    post 'new' => :create
     delete 'logut' => :destroy
   end
 
