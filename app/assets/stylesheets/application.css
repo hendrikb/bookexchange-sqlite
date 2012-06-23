@@ -11,3 +11,28 @@
  *= require_self
  *= require_tree .
  */
+
+
+
+div#header {
+  float:right;
+  font-size:3em;
+  font-weight:bold;
+  font-family: 'Cagliostro', cursive;
+  letter-spacing: 5px;
+  margin-top: 30px;
+  margin-right: 30px;
+}
+
+
+div.loginout {
+  float:right;
+  clear:right;
+  margin-top:20px;
+  margin-right:30px;
+}
+
+div.loginout div {
+  display: inline;
+  padding-left:15px;
+}

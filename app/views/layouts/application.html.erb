@@ -3,15 +3,14 @@
 <head>
   <title>BookexchangeSqlite</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class='loginout'>
-  
-  <%= yield %>
-
-
+  <%= link_to(image_tag('logo.png'), url_for(action: 'show', controller: 'page', param: 'home')) %>
+  <div id='header'>Books Exchange Example Project</div>
+  <div class='loginout'>
   <% if session[:user_id] %>
     <%= link_to 'Logout', logout_url, method: :delete %>
   <% else %>
@@ -20,9 +19,10 @@
       <%= link_to 'Register', new_user_path %> 
     </div>
   <% end %>
-</div>
+  </div>
 
 
+  <%= yield %>
 
 </body>
 </html>

@@ -6,6 +6,7 @@
     <th>Title</th>
     <th>Description</th>
     <th>Isbn</th>
+    <th>Current owner</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +18,7 @@
     <td><%= book.title %></td>
     <td><%= book.description %></td>
     <td><%= book.isbn %></td>
+    <td><%= link_to book.user.user_name, book.user  %></td>
     <td><%= link_to 'Show', book %></td>
     <td><%= link_to 'Edit', edit_book_path(book) %></td>
     <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
