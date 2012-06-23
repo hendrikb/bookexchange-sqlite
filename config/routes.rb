@@ -1,5 +1,6 @@
 BookexchangeSqlite::Application.routes.draw do
   get "page/show"
+  get "users/login"
 
   resources :books
 

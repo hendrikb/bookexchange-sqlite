@@ -86,4 +86,13 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def login
+
+  end
+
+  def logout
+
+  end
 end
