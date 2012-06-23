@@ -8,6 +8,7 @@ class SessionController < ApplicationController
     puts "authenticating "+params[:user_name]+" with password "+params[:password]
     if user and user.authenticate(params[:password])
       session['user_id'] = user.id
+      session['user'] = user
       redirect_to :books
     else
       redirect_to login_url, alert: "Invalid username/password"

@@ -47,7 +47,7 @@ class BooksController < ApplicationController
     @book = Book.new(params[:book])
 
     respond_to do |format|
-      book.user = session[:user]
+      @book.user_id = session[:user_id]
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render json: @book, status: :created, location: @book }

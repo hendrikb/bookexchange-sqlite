@@ -11,20 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623130656) do
+ActiveRecord::Schema.define(:version => 20120623181631) do
 
   create_table "books", :force => true do |t|
     t.string   "author"
     t.string   "title"
     t.text     "description"
     t.decimal  "isbn",        :precision => 10, :scale => 0
+    t.decimal  "price",       :precision => 6,  :scale => 2
+    t.integer  "condition"
+    t.integer  "user_id",                                    :null => false
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
   end
 
   add_index "books", ["author"], :name => "index_books_on_author"
-  add_index "books", ["isbn"], :name => "index_books_on_isbn"
   add_index "books", ["title"], :name => "index_books_on_title"
+  add_index "books", ["user_id"], :name => "index_books_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "user_name"
