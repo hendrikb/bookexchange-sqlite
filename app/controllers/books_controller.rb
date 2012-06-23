@@ -95,6 +95,7 @@ class BooksController < ApplicationController
   def take
     @book = Book.find(params[:id])
     puts "User "+session[:user].user_name+" takes : "+@book.title
+    render :show, notice: "User has been notified"
     #TODO: Implement "take"
   end
 end

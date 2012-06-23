@@ -7,7 +7,7 @@
     <th>Description</th>
     <th>Isbn</th>
     <th>Current owner</th>
-    <th></th>
+    <th>Get this book now!</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,14 +20,15 @@
     <td><%= book.description %></td>
     <td><%= book.isbn %></td>
     <td><%= link_to book.user.user_name, book.user  %></td>
-    <td><%= link_to 'Show', book %></td>
+    <td><%= link_to('I want it!', controller: :books, action: 'take', id: book, data: {confirm: 'Do you want to notifiy '+book.user.user_name+' that you would love to have this book?' }) unless session[:user] == book.user %></td>
+    <td><%= link_to 'Show Details', book %></td>
     <td><%= link_to('Edit', edit_book_path(book)) unless session[:user] != book.user %></td>
     <td><%= link_to('Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }) unless session[:user] != book.user %></td>
-    <td><%= link_to('I want it!', book, method: 'take', data: {confirm: 'Do you want to notifiy '+book.user.user_name+' that you would love to have this book?' }) unless session[:user] == book.user %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+<p>
 <%= link_to 'Offer YOUR Book NOW! :-)', new_book_path %>
+</p>

@@ -2,12 +2,15 @@ BookexchangeSqlite::Application.routes.draw do
 
 #   get "page/show"
 
+  get "books/take" => "books#take"
+  
   resources :books
   resources :users
   resources :pages
 
   get "session/new" => "session#new"
   get "page/show" => "page#show"
+
 
 
   controller :session do
