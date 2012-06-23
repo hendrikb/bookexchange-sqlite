@@ -17,6 +17,7 @@ class SessionController < ApplicationController
 
   def destroy
     session['user_id'] = nil
-    redirect_to :books, notice: "Logged out"
+    session[:user] = nil;
+    redirect_to :back, notice: "Logged out"
   end
 end

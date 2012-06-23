@@ -39,6 +39,9 @@ class BooksController < ApplicationController
   # GET /books/1/edit
   def edit
     @book = Book.find(params[:id])
+    if @book.user != session[:user]
+      redirect_to @book, notice: "You may not edit this book, it's not yours!"
+    end
   end
 
   # POST /books
@@ -78,11 +81,20 @@ class BooksController < ApplicationController
   # DELETE /books/1.json
   def destroy
     @book = Book.find(params[:id])
-    @book.destroy
-
-    respond_to do |format|
-      format.html { redirect_to books_url }
-      format.json { head :no_content }
+    if @book.user != session[:user]
+      redirect_to @book, notice: "You may not delete this book, it's not yours!"
+    else
+      @book.destroy
+      respond_to do |format|
+        format.html { redirect_to books_url }
+        format.json { head :no_content }
+      end
     end
+  end
+
+  def take
+    @book = Book.find(params[:id])
+    puts "User "+session[:user].user_name+" takes : "+@book.title
+    #TODO: Implement "take"
   end
 end

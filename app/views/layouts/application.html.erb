@@ -12,17 +12,23 @@
   <div id='header'>Books Exchange Example Project</div>
   <div class='loginout'>
   <% if session[:user_id] %>
-    <%= link_to 'Logout', logout_url, method: :delete %>
+    <%= "Hi "+session[:user].user_name+"!" %>
+    <%= link_to('Logout', logout_url, method: :delete) %>
   <% else %>
-    <%= link_to 'Login', login_url %>
     <div class='registerlink'>
       <%= link_to 'Register', new_user_path %> 
     </div>
+    <%= link_to 'Login', login_url %>
   <% end %>
   </div>
 
 
   <%= yield %>
 
+  <br />
+  <div id="footer">
+    <%= link_to "browse by user", :users %>
+    <%= link_to "no, by book", :books %>
+  </div>
 </body>
 </html>
