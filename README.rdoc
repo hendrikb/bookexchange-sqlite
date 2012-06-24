@@ -15,6 +15,8 @@ You CAN run some functional tests by entering (({rake test})) to see two example
 
 Open your browser of choice and head over to http://localhost:3000 and have fun.
 
+You CAN log in using some credentials from the db:seed command (i.e. "john", password: "john123") or you can have some more fun using the register functionality.
+
 == Usage
 
 Register via the register link. Add books you want to get rid of to your virtual library.

@@ -21,7 +21,7 @@ books = [
 
 hagen = User.create(user_name: "hagen", password: "test123", email: "hagen@asdgikhj.de", age: 23, description: "A test user")
 
-john = User.create(user_name: "john", password: "john", email: "john@doexxxx.info", age: 27, description: "The author of this piece of software")
+john = User.create(user_name: "john", password: "john123", email: "john@doexxxx.info", age: 27, description: "The author of this piece of software")
 
 tina = User.create(user_name: "tina", password: "123blar", email: "tinchen@mywebsite.com", age: 22, description: "no one actually knows me.")
 hagen.books.create(books[6])
