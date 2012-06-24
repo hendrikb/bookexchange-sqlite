@@ -4,14 +4,14 @@ It builts up a book exchange platform built in Ruby on Rails.
 
 == Installation
 
-Run (({bundle install})) to install all dependencies. You are responsible to provide all of them -
+Run `bundle install` to install all dependencies. You are responsible to provide all of them -
 it won't work otherwise.
 
-Run (({rake db:seed})) to fill in demo data (optional).
+Run `rake db:seed` to fill in demo data (optional).
 
-Run (({rails server })) to start the development server.
+Run `rails server ` to start the development server.
 
-You CAN run some functional tests by entering (({rake test})) to see two example test cases that test the user controller. However, please note that I did not develop this thing test-driven, therefore there are no "real life" tests.
+You CAN run some functional tests by entering `rake test` to see two example test cases that test the user controller. However, please note that I did not develop this thing test-driven, therefore there are no "real life" tests.
 
 Open your browser of choice and head over to http://localhost:3000 and have fun.
 
