@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user_name: MyString
-  email: MyString
-  password: MyString
-  age: 1
+  user_name: hendrik
+  email: hbergunde@testuser.xox
+  password_digest: atestpassword
+  age: 23
   description: MyText
 
 two:
-  user_name: MyString
-  email: MyString
-  password: MyString
-  age: 1
+  user_name: user123
+  email: MyString@gnirtSyM.oxo
+  password_digest: MyString
+  age: 42
   description: MyText

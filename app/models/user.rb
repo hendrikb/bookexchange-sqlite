@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :age, :description, :email, :password_digest, :user_name, :password, :password_confirmation
+  attr_accessible :age, :description, :email, :password_digest, :user_name, :password, :password_confirmation, :full_name
   validates :user_name, presence: true, uniqueness: true
   validates :email, presence: true
 
