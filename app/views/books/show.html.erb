@@ -1,3 +1,4 @@
+<h1>Book Details: <%= @book.title %></h1>
 <p id="notice"><%= notice %></p>
 
 <% if @book.user != session[:user] %>
@@ -23,6 +24,17 @@
 
 <div>
   <b>Isbn:</b> <%= @book.isbn %>
+</div>
+
+<% if @book.price? %>
+  <div>
+    <b>Price:</b> $<%= @book.price %>
+  </div>
+<% end %>
+
+
+<div>
+  <b>Condition:</b> <%= Book.map_condition(@book.condition) %>
 </div>
 
 <div>

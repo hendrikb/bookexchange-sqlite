@@ -1,4 +1,4 @@
-<h1>Listing books</h1>
+<h1>Here! Our Books</h1>
 
 <table>
   <tr>
@@ -7,6 +7,7 @@
     <th>Description</th>
     <th>Isbn</th>
     <th>Current owner</th>
+    <th>Condition</th>
     <th>Get this book now!</th>
     <th></th>
     <th></th>
@@ -20,6 +21,7 @@
     <td><%= book.description %></td>
     <td><%= book.isbn %></td>
     <td><%= link_to book.user.user_name, book.user  %></td>
+    <td><%= Book.map_condition(book.condition) %></td>
     <td><%= link_to(image_tag('heart_24.png', title: 'I want this Book!', alt: 'I want this book!'), controller: :books, action: 'take', id: book, data: {confirm: 'Do you want to notifiy '+book.user.user_name+' that you would love to have this book?' }) unless session[:user] == book.user %></td>
     <td><%= link_to 'Show Details', book %></td>
     <td><%= link_to('Edit', edit_book_path(book)) unless session[:user] != book.user %></td>

@@ -25,8 +25,19 @@
   </div>
   <div class="field">
     <%= f.label :isbn %><br />
-    <%= f.number_field :isbn %>
+    <%= f.text_field :isbn %>
   </div>
+
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price, min: 0  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :condition %><br />
+    Very poor <%= f.range_field :condition, min: -3, max: 3  %> Like New
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
