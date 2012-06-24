@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user_name: hendrik
-  email: hbergunde@testuser.xox
+  user_name: anybody 
+  email: anybody@testuser.xox
   password_digest: atestpassword
   age: 23
   description: MyText

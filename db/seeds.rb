@@ -19,15 +19,15 @@ books = [
     { title: "The patient", author: "John Katzenbach", isbn: "2456789987", condition: 0, price: 10.01 }
    ]
 
-hagen = User.create(user_name: "hagen", password: "test123", email: "hagen@hagen.xox", age: 23, description: "A test user")
+hagen = User.create(user_name: "hagen", password: "test123", email: "hagen@asdgikhj.de", age: 23, description: "A test user")
 
-hendrik = User.create(user_name: "hendrik", password: "hendrik", email: "hbergunde@gmx.de", age: 27, description: "The author of this piece of software")
+john = User.create(user_name: "john", password: "john", email: "john@doexxxx.info", age: 27, description: "The author of this piece of software")
 
-tina = User.create(user_name: "tina", password: "123blar", email: "tinchen@blaaar.xox", age: 22, description: "no one actually knows me.")
+tina = User.create(user_name: "tina", password: "123blar", email: "tinchen@mywebsite.com", age: 22, description: "no one actually knows me.")
 hagen.books.create(books[6])
 tina.books.create(books[3])
-hendrik.books.create(books[5])
+john.books.create(books[5])
 hagen.books.create(books[4])
 tina.books.create(books[0])
 hagen.books.create(books[1])
-hendrik.books.create(books[2])
+john.books.create(books[2])

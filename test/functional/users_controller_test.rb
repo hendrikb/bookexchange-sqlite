@@ -3,11 +3,11 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
   setup do
     @input_attributes = {
-      user_name: "hendrikasdasas",
+      user_name: "sdasas",
       password: "teeeeest",
       email: "justarandom@emailaddress.xxz",
       description: "test description",
-      full_name: "Hendrik Bergunde",
+      full_name: "John Doe",
       age: 27
     }
     @user = users(:one)
