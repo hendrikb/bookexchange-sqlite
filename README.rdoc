@@ -26,6 +26,15 @@ and you two can get in touch. AWESOME.
 
 This code is BSD Licensed. Use at own risk, comes as is.
 
+All Icons were found at http://iconfinder.com - I used free-for-commercial-use icons that did not require a back link. However, I used these icons:
+
+  * http://www.iconfinder.com/icondetails/15489/128/bookmark_favourite_glossy_heart_love_icon
+  * http://www.iconfinder.com/icondetails/61565/128/book_icon
+  * http://www.iconfinder.com/icondetails/61564/128/book_blue_icon
+
 == Author
 
 Hendrik Bergunde <hbergunde@gmx.de> 2012.
+
+
+

@@ -23,10 +23,12 @@
         <% if book.author? %>
           <%= "("+book.author+")" %>
         <% end %>
+        &dash;
+        <%= link_to(image_tag('heart_24.png', alt:'I want this book!', title: 'I want this Book!'), controller: :books, action: 'take', id: book, data: {confirm: 'Do you want to notifiy '+book.user.user_name+' that you would love to have this book?' }) unless session[:user]     == book.user %>
       </li>
     <% end %>
   </ul>
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) unless @user != session[:user] %> 
 <%= link_to 'Back', :back %>

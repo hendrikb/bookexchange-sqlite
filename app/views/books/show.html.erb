@@ -1,25 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<% if @book.user != session[:user] %>
+  <div id="heart_128">
+    <%= link_to(image_tag('heart_128.png', alt: 'I want it', title: "I want this book!" ), controller: :books, action: 'take', id: @book, data: {confirm: 'Do you want to notifiy '+@book.user.user_name+' that you would love to have this book?' }) %>
+  </div>
+<% end %>
+
+<div>
   <b>Author:</b>
   <%= @book.author %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Title:</b>
   <%= @book.title %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Description:</b>
   <%= @book.description %>
-</p>
+</div>
 
-<p>
-  <b>Isbn:</b>
-  <%= @book.isbn %>
-</p>
+<div>
+  <b>Isbn:</b> <%= @book.isbn %>
+</div>
 
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Edit', edit_book_path(@book) unless @book.user != session[:user] %>
 <%= link_to 'Back', books_path %>
