@@ -17,10 +17,6 @@ Open your browser of choice and head over to http://localhost:3000 and have fun.
 
 You CAN log in using some credentials from the db:seed command (i.e. "john", password: "john123") or you can have some more fun using the register functionality.
 
-=== Please note:
-
-There is this cute heart icon. You can click on it to invoke the "take" functionality. It is intended to notify a books owner that you're interested in taking his book. However, I have not implemented a hard core notification method. All "take" does is print "Foo wants to take the book Bar!" to the console!
-
 == Usage
 
 Register via the register link. Add books you want to get rid of to your virtual library.
@@ -29,6 +25,10 @@ Wait for others to register. They will immediately see your enlisted books.
 
 They (and you, on their books) hit "I want it!" on the book's page to ping you (the others)
 and you two can get in touch. AWESOME.
+
+=== Please note:
+
+There is this cute heart icon. You can click on it to invoke the "take" functionality. It is intended to notify a books owner that you're interested in taking his book. However, I have not implemented a hard core notification method. All "take" does is print "Foo wants to take the book Bar!" to the console!
 
 == Free and Open Source
 
