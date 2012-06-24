@@ -19,7 +19,7 @@
   <h1>Available Books</h1>
   <ul id="books">
     <% @user.books.each do |book| %>
-      <li><%= book.title %>
+      <li><%= link_to book.title, book %>
         <% if book.author? %>
           <%= "("+book.author+")" %>
         <% end %>
@@ -30,5 +30,5 @@
   </ul>
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user) unless @user != session[:user] %> 
+<%= link_to 'Edit my user details', edit_user_path(@user) unless @user != session[:user] %> <br />
 <%= link_to 'Back', :back %>

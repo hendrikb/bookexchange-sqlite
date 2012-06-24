@@ -25,6 +25,11 @@
   <b>Isbn:</b> <%= @book.isbn %>
 </div>
 
+<div>
+  <b>Current Owner:</b>
+  <%= link_to @book.user.user_name, @book.user %>
+</div>
 
-<%= link_to 'Edit', edit_book_path(@book) unless @book.user != session[:user] %>
+<%= link_to 'Edit this book', edit_book_path(@book) unless @book.user != session[:user] %>
+<br />
 <%= link_to 'Back', books_path %>

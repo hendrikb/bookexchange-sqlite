@@ -24,6 +24,11 @@ div#header {
   margin-right: 30px;
 }
 
+div#footer {
+  margin-top: 30px;
+  background-color:#DDDDDD;
+}
+
 
 div.loginout {
   float:right;
